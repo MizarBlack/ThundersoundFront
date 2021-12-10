@@ -1,0 +1,84 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentAlbum.id">
+    <h4>Album</h4>
+    <div>
+      <label><strong>Name:</strong></label> {{ currentAlbum.name }}
+    </div>
+    <div>
+      <label><strong>Release date:</strong></label>
+      {{ currentAlbum.release_date }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentAlbum.description }}
+    </div>
+
+    <a
+      class="badge badge-warning"
+      routerLink="{{ currentAlbum.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentAlbum">
+    <br />
+    <p>Please click on a Album...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentAlbum.id" class="edit-form">
+    <h4>Album</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentAlbum.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="release_date">Release date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="release_date"
+          [(ngModel)]="currentAlbum.release_date"
+          name="release_date"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentAlbum.description"
+          name="description"
+        />
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteAlbum()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateAlbum()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentAlbum.id">
+    <br />
+    <p>Cannot access this Album...</p>
+  </div>
+</ng-template>

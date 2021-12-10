@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Please, update your profile:</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nickname</mat-label>
+    <input matInput [(ngModel)]="data.nickname">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Back</button>
+  <button mat-button [mat-dialog-close]="data.nickname" cdkFocusInitial>Accept</button>
+</div>

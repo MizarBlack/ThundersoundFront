@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin: 50px 0; border: 2px solid #BBBBBB; padding: 50px; border-radius: 5px">
+      <div class="row justify-contents-around">
+        <div class="col">
+          <ngx-audio-player
+            [displayPlaylist]="msaapDisplayPlayList" [tableHeader]="msaapTableHeader" [titleHeader]="msaapTitleHeader"
+            [artistHeader]="msaapArtistHeader" [durationHeader]="msaapDurationHeader" [displayTitle]="msaapDisplayTitle"
+            [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
+            [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
+            [displayDuration]="msaapDisplayDuration" [expanded]="true"
+            [pageSizeOptions]="pageSizeOptions" [playlist]="playlist">
+          </ngx-audio-player>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

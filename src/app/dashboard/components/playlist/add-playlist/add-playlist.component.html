@@ -1,0 +1,36 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="playlist.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="user_id">Id user</label>
+        <input
+          class="form-control"
+          id="user_id"
+          required
+          [(ngModel)]="playlist.user_id"
+          name="user_id"
+        />
+      </div>
+
+      <button (click)="savePlaylist()" class="btn btn-success" style="margin-right:20px">Submit</button>
+      <button routerLink="../" class="btn btn-success">Back</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Playlist was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newPlaylist()">Add</button>
+    </div>
+  </div>
+</div>

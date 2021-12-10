@@ -1,0 +1,50 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-nav-list>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'main-page'">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span *ngIf="isExpanded">Main Page</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'track-list'">
+        <mat-icon mat-list-icon>music_note</mat-icon>
+        <span *ngIf="isExpanded">Track</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'album'">
+        <mat-icon mat-list-icon>library_music</mat-icon>
+        <span *ngIf="isExpanded">Album</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'playlist'">
+        <mat-icon mat-list-icon>queue_music</mat-icon>
+        <span *ngIf="isExpanded">Playlist</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'user'">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span *ngIf="isExpanded">User</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'search'">
+        <mat-icon mat-list-icon>search</mat-icon>
+        <span *ngIf="isExpanded">Search</span>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="content">
+    <mat-toolbar>
+        <mat-icon mat-list-icon>bolt</mat-icon>
+      <h4>Thundersound</h4>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

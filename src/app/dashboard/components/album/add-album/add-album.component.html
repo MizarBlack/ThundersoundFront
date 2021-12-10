@@ -1,0 +1,49 @@
+<div>
+  <div class="submit-form">
+
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="album.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="album.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="release_date">Release Date</label>
+        <input
+          class="form-control"
+          id="release_date"
+          required
+          [(ngModel)]="album.release_date"
+          name="release_date"
+        />
+      </div>
+
+      <button (click)="saveAlbum()" class="btn btn-success" style="margin-right:20px">Submit</button>
+      <button routerLink="../" class="btn btn-success">Back</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Album was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newAlbum()" style="margin-right:20px">Add</button>
+      <button routerLink="../" class="btn btn-success">Back</button>
+    </div>
+  </div>
+</div>

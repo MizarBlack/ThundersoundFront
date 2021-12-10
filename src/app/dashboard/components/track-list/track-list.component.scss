@@ -1,0 +1,27 @@
+// The margin between two sections
+$margin-promotion-sections: 50px;
+$margin-promotion-sections-small: 15px;
+
+.docs-homepage-row {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  margin: $margin-promotion-sections 0;
+}
+
+
+.docs-homepage-row-column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.docs-header-start {
+    text-align: center;
+    margin: $margin-promotion-sections 0 0 0;
+
+    .mat-raised-button {
+      font-size: 15px;
+    }
+  }
